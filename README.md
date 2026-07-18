@@ -30,7 +30,7 @@ The uninstaller restores only the bytes changed by this patch.
 
 ## Tuning
 
-The default edge zone is `32` pixels. To try a different size, run the PowerShell script
+The default edge zone is `64` pixels. To try a different size, run the PowerShell script
 directly:
 
 ```powershell

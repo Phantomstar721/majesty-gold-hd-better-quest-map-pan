@@ -1,7 +1,7 @@
 param(
     [string]$GamePath = "",
     [ValidateRange(1, 127)]
-    [int]$EdgePixels = 32,
+    [int]$EdgePixels = 64,
     [Nullable[int]]$OutsidePixels = $null,
     [switch]$DryRun
 )

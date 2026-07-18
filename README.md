@@ -1,18 +1,17 @@
-# Majesty Gold HD - Wider Quest Map Edge Pan
+# Majesty Gold HD - Better Quest Map Pan
 
 A small Windows patcher for the Steam version of **Majesty Gold HD**.
 
-It makes the quest selection map easier to pan by widening the edge-scroll zone. In the
-unpatched game, the mouse has to sit in a very thin strip at the edge of the map before
-the map starts moving.
+This improves the quest selection map in two ways:
 
-After installing this patch, the edge pan zone is wider and more forgiving.
+- You can hold the left mouse button on the map and drag to pan.
+- The edge-scroll zone is wider, so panning at the edge of the screen is much easier.
 
 ## Install
 
 1. Close Majesty Gold HD.
 2. Download and unzip the latest release.
-3. Double-click `Install - Wider Quest Map Edge Pan.bat`.
+3. Double-click `Install - Better Quest Map Pan.bat`.
 4. Start Majesty Gold HD and open the quest selection screen.
 
 If Windows blocks the patch because the game is under `Program Files`, right-click the
@@ -23,19 +22,21 @@ install BAT and choose **Run as administrator**.
 Close Majesty Gold HD, then double-click:
 
 ```text
-Uninstall - Restore Quest Map Edge Pan.bat
+Uninstall - Restore Stock Quest Map Pan.bat
 ```
 
-The uninstaller restores only the bytes changed by this patch.
+This restores the quest map panning behavior changed by this patch.
 
-## Tuning
+## Optional Files
 
-The default edge zone is `64` pixels. To try a different size, run the PowerShell script
-directly:
+The main install BAT is the one most players want.
 
-```powershell
-powershell.exe -ExecutionPolicy Bypass -File .\scripts\Install-QuestMapEdgePan.ps1 -EdgePixels 48
-```
+The ZIP also includes click-drag-only BATs for troubleshooting:
+
+- `Install - Click-Drag Quest Map Pan Only.bat`
+- `Uninstall - Restore Click-Drag Quest Map Pan Only.bat`
+
+The edge-pan-only version is still available as the older `v1.0.0` release.
 
 ## Notes
 
@@ -47,12 +48,17 @@ folders on other drives. If it cannot find the game, run the PowerShell script m
 with a path:
 
 ```powershell
-powershell.exe -ExecutionPolicy Bypass -File .\scripts\Install-QuestMapEdgePan.ps1 -GamePath "D:\SteamLibrary\steamapps\common\Majesty HD"
+powershell.exe -ExecutionPolicy Bypass -File .\scripts\Install-QuestMapPan.ps1 -GamePath "D:\SteamLibrary\steamapps\common\Majesty HD"
 ```
 
-Click-and-drag panning is not included yet. The existing `MapDrag` preference appears
-to apply to other map views, but the quest selection map does not appear to use that
-same drag path.
+## Tuning Edge Pan
+
+The default edge zone is `64` pixels. To try a different size, run the PowerShell script
+directly:
+
+```powershell
+powershell.exe -ExecutionPolicy Bypass -File .\scripts\Install-QuestMapPan.ps1 -EdgePixels 48
+```
 
 ## Build A Release Zip
 
